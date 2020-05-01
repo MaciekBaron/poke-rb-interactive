@@ -1,0 +1,6 @@
+.vscode
+state/*.txt
+*.state
+*.gb
+.DS_Store
+__pycache__

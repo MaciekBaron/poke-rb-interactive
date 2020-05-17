@@ -14,7 +14,7 @@ class VoteManager():
     def set_game_instance(self, game):
         self.game = game
 
-    def set_current_poll(self, poll, duration = 20):
+    def set_current_poll(self, poll, duration = 30):
         assert isinstance(poll, Poll)
         self.poll = poll
         self.reset()
@@ -35,7 +35,7 @@ class VoteManager():
         if not self.is_poll_available():
             return
         vote = self.poll.validate_vote(vote)
-        if vote:# and (user not in self.users_voted):
+        if vote and (user not in self.users_voted):
             if isinstance(self.poll, OptionPoll) and vote not in self.poll.options:
                 try:
                     vote = self.poll.options[int(vote) - 1]

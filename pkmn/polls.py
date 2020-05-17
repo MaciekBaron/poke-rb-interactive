@@ -39,7 +39,7 @@ def _splash_enemy_or_paralyzed(pkmn, option, votes):
         pkmn.set_active_opponent_monster_move(2, MOVE_SPLASH)
         pkmn.set_active_opponent_monster_move(3, MOVE_SPLASH)
     else:
-        pkmn.set_active_opponent_monster_paralyzed()
+        pkmn.set_active_player_monster_paralyzed()
 
 def _change_enemy_name(pkmn, option, votes):
     if option is not None:

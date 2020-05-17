@@ -85,7 +85,7 @@ are supported:
   inside a cave)
   * `summon [PKMN]` (20 points) - summons a specific Pokémon (when in tall grass
   / inside a cave)
-  * `playername [NAME]` (30 points) - changes the Player's name to `[NAME]`
+  * `playername [NAME]` (50 points) - changes the Player's name to `[NAME]`
 
 It's a good idea to display the above as part of your layout so that viewers
 know what they can do and how much everything costs. They can also check how

@@ -98,4 +98,4 @@ needs to run locally, so not many optimisations have been considered.
 
 License
 =======
-MIT
+GNU Lesser General Public License

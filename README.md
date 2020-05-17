@@ -1,17 +1,23 @@
-Interactive Twitch Pokemon Red/Blue
+Interactive Twitch Pokémon Red/Blue
 ===================================
-This is a Python application that allows you to play 1st generation Pokemon
+This is a Python application that allows you to play 1st generation Pokémon
 games while your Twitch viewers influence the game by voting. Viewers can help
 or hinder the player's progress.
 
 ***This is not a "Twitch Play Pokemon" implementation.***
 
+***This project is not affiliated with Nintendo or Game Freak. Pokémon character
+names are trademarks of Nintendo.***
+
 The application consists of several layers:
   * [PyBoy](https://github.com/Baekalfen/PyBoy) - Python GameBoy emulator
   * Twitch Bot - responsible for accepting votes and commands
   * Web layer - displays polls and results; this can be further divided into the
-  web server, websocket server and JavaScript layers
+  web server, websocket server and JavaScript layers. The web app is a simple
+  Vue.js application.
   * Core application - manages game modification
+  * State tracker - outputs state txt files into the state folder (which can be)
+  used to display information on the screen when streaming.
 
 Installation
 ============
@@ -20,7 +26,7 @@ In order to run the application, you need to follow a few setup steps.
 Dependencies
 ------------
   * Python 3 + pip
-  * Your own ROM dump of Pokemon Red or Blue
+  * Your own ROM dump of Pokémon Red or Blue
 
 Setup
 -----
@@ -73,11 +79,11 @@ Points can be spent using the `!spend` command. Currently, the following actions
 are supported:
 
   * `dark` (5 points) - makes it dark in the current area
-  * `heal` (5 points) - heals main Pokemon
-  * `poison` (10 points) - poisons the first Pokemon in the party
-  * `wild` (10 points) - triggers a wild Pokemon battle (when in tall grass /
+  * `heal` (5 points) - heals main Pokémon
+  * `poison` (10 points) - poisons the first Pokémon in the party
+  * `wild` (10 points) - triggers a wild Pokémon battle (when in tall grass /
   inside a cave)
-  * `summon [PKMN]` (20 points) - summons a specific Pokemon (when in tall grass
+  * `summon [PKMN]` (20 points) - summons a specific Pokémon (when in tall grass
   / inside a cave)
   * `playername [NAME]` (30 points) - changes the Player's name to `[NAME]`
 

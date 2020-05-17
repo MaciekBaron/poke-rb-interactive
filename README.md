@@ -4,7 +4,7 @@ This is a Python application that allows you to play 1st generation Pokémon
 games while your Twitch viewers influence the game by voting. Viewers can help
 or hinder the player's progress.
 
-***This is not a "Twitch Play Pokemon" implementation.***
+***This is not a "Twitch Plays Pokémon" implementation.***
 
 ***This project is not affiliated with Nintendo or Game Freak. Pokémon character
 names are trademarks of Nintendo.***

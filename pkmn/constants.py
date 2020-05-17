@@ -133,7 +133,7 @@ MOVE_CLAMP = 0x80
 MOVE_SWIFT = 0x81
 MOVE_SKULL_BASH = 0x82
 MOVE_SPIKE_CANNON = 0x83
-MOVEMONSTER_ICT = 0x84
+MOVE_CONSTRICT = 0x84
 MOVE_AMNESIA = 0x85
 MOVE_KINESIS = 0x86
 MOVE_SOFTBOILED = 0x87
@@ -584,310 +584,833 @@ SPRITE_LYING_OLD_MAN_UNUSED_1 = 0x46
 SPRITE_LYING_OLD_MAN_UNUSED_2 = 0x47
 SPRITE_LYING_OLD_MAN = 0x48
 
+MAP_PALLET_TOWN = 0x00
+MAP_VIRIDIAN_CITY = 0x01
+MAP_PEWTER_CITY = 0x02
+MAP_CERULEAN_CITY = 0x03
+MAP_LAVENDER_TOWN = 0x04
+MAP_VERMILION_CITY = 0x05
+MAP_CELADON_CITY = 0x06
+MAP_FUCHSIA_CITY = 0x07
+MAP_CINNABAR_ISLAND = 0x08
+MAP_INDIGO_PLATEAU = 0x09
+MAP_SAFFRON_CITY = 0x0A
+MAP_UNUSED_MAP_0B = 0x0B
+MAP_ROUTE_1 = 0x0C
+MAP_ROUTE_2 = 0x0D
+MAP_ROUTE_3 = 0x0E
+MAP_ROUTE_4 = 0x0F
+MAP_ROUTE_5 = 0x10
+MAP_ROUTE_6 = 0x11
+MAP_ROUTE_7 = 0x12
+MAP_ROUTE_8 = 0x13
+MAP_ROUTE_9 = 0x14
+MAP_ROUTE_10 = 0x15
+MAP_ROUTE_11 = 0x16
+MAP_ROUTE_12 = 0x17
+MAP_ROUTE_13 = 0x18
+MAP_ROUTE_14 = 0x19
+MAP_ROUTE_15 = 0x1A
+MAP_ROUTE_16 = 0x1B
+MAP_ROUTE_17 = 0x1C
+MAP_ROUTE_18 = 0x1D
+MAP_ROUTE_19 = 0x1E
+MAP_ROUTE_20 = 0x1F
+MAP_ROUTE_21 = 0x20
+MAP_ROUTE_22 = 0x21
+MAP_ROUTE_23 = 0x22
+MAP_ROUTE_24 = 0x23
+MAP_ROUTE_25 = 0x24
+MAP_REDS_HOUSE_1F = 0x25
+MAP_REDS_HOUSE_2F = 0x26
+MAP_BLUES_HOUSE = 0x27
+MAP_OAKS_LAB = 0x28
+MAP_VIRIDIAN_POKECENTER = 0x29
+MAP_VIRIDIAN_MART = 0x2A
+MAP_VIRIDIAN_SCHOOL_HOUSE = 0x2B
+MAP_VIRIDIAN_NICKNAME_HOUSE = 0x2C
+MAP_VIRIDIAN_GYM = 0x2D
+MAP_DIGLETTS_CAVE_ROUTE_2 = 0x2E
+MAP_VIRIDIAN_FOREST_NORTH_GATE = 0x2F
+MAP_ROUTE_2_TRADE_HOUSE = 0x30
+MAP_ROUTE_2_GATE = 0x31
+MAP_VIRIDIAN_FOREST_SOUTH_GATE = 0x32
+MAP_VIRIDIAN_FOREST = 0x33
+MAP_MUSEUM_1F = 0x34
+MAP_MUSEUM_2F = 0x35
+MAP_PEWTER_GYM = 0x36
+MAP_PEWTER_NIDORAN_HOUSE = 0x37
+MAP_PEWTER_MART = 0x38
+MAP_PEWTER_SPEECH_HOUSE = 0x39
+MAP_PEWTER_POKECENTER = 0x3A
+MAP_MT_MOON_1F = 0x3B
+MAP_MT_MOON_B1F = 0x3C
+MAP_MT_MOON_B2F = 0x3D
+MAP_CERULEAN_TRASHED_HOUSE = 0x3E
+MAP_CERULEAN_TRADE_HOUSE = 0x3F
+MAP_CERULEAN_POKECENTER = 0x40
+MAP_CERULEAN_GYM = 0x41
+MAP_BIKE_SHOP = 0x42
+MAP_CERULEAN_MART = 0x43
+MAP_MT_MOON_POKECENTER = 0x44
+MAP_CERULEAN_TRASHED_HOUSE_COPY = 0x45
+MAP_ROUTE_5_GATE = 0x46
+MAP_UNDERGROUND_PATH_ROUTE_5 = 0x47
+MAP_DAYCARE = 0x48
+MAP_ROUTE_6_GATE = 0x49
+MAP_UNDERGROUND_PATH_ROUTE_6 = 0x4A
+MAP_UNDERGROUND_PATH_ROUTE_6_COPY = 0x4B
+MAP_ROUTE_7_GATE = 0x4C
+MAP_UNDERGROUND_PATH_ROUTE_7 = 0x4D
+MAP_UNDERGROUND_PATH_ROUTE_7_COPY = 0x4E
+MAP_ROUTE_8_GATE = 0x4F
+MAP_UNDERGROUND_PATH_ROUTE_8 = 0x50
+MAP_ROCK_TUNNEL_POKECENTER = 0x51
+MAP_ROCK_TUNNEL_1F = 0x52
+MAP_POWER_PLANT = 0x53
+MAP_ROUTE_11_GATE_1F = 0x54
+MAP_DIGLETTS_CAVE_ROUTE_11 = 0x55
+MAP_ROUTE_11_GATE_2F = 0x56
+MAP_ROUTE_12_GATE_1F = 0x57
+MAP_BILLS_HOUSE = 0x58
+MAP_VERMILION_POKECENTER = 0x59
+MAP_POKEMON_FAN_CLUB = 0x5A
+MAP_VERMILION_MART = 0x5B
+MAP_VERMILION_GYM = 0x5C
+MAP_VERMILION_PIDGEY_HOUSE = 0x5D
+MAP_VERMILION_DOCK = 0x5E
+MAP_SS_ANNE_1F = 0x5F
+MAP_SS_ANNE_2F = 0x60
+MAP_SS_ANNE_3F = 0x61
+MAP_SS_ANNE_B1F = 0x62
+MAP_SS_ANNE_BOW = 0x63
+MAP_SS_ANNE_KITCHEN = 0x64
+MAP_SS_ANNE_CAPTAINS_ROOM = 0x65
+MAP_SS_ANNE_1F_ROOMS = 0x66
+MAP_SS_ANNE_2F_ROOMS = 0x67
+MAP_SS_ANNE_B1F_ROOMS = 0x68
+MAP_UNUSED_MAP_69 = 0x69
+MAP_UNUSED_MAP_6A = 0x6A
+MAP_UNUSED_MAP_6B = 0x6B
+MAP_VICTORY_ROAD_1F = 0x6C
+MAP_UNUSED_MAP_6D = 0x6D
+MAP_UNUSED_MAP_6E = 0x6E
+MAP_UNUSED_MAP_6F = 0x6F
+MAP_UNUSED_MAP_70 = 0x70
+MAP_LANCES_ROOM = 0x71
+MAP_UNUSED_MAP_72 = 0x72
+MAP_UNUSED_MAP_73 = 0x73
+MAP_UNUSED_MAP_74 = 0x74
+MAP_UNUSED_MAP_75 = 0x75
+MAP_HALL_OF_FAME = 0x76
+MAP_UNDERGROUND_PATH_NORTH_SOUTH = 0x77
+MAP_CHAMPIONS_ROOM = 0x78
+MAP_UNDERGROUND_PATH_WEST_EAST = 0x79
+MAP_CELADON_MART_1F = 0x7A
+MAP_CELADON_MART_2F = 0x7B
+MAP_CELADON_MART_3F = 0x7C
+MAP_CELADON_MART_4F = 0x7D
+MAP_CELADON_MART_ROOF = 0x7E
+MAP_CELADON_MART_ELEVATOR = 0x7F
+MAP_CELADON_MANSION_1F = 0x80
+MAP_CELADON_MANSION_2F = 0x81
+MAP_CELADON_MANSION_3F = 0x82
+MAP_CELADON_MANSION_ROOF = 0x83
+MAP_CELADON_MANSION_ROOF_HOUSE = 0x84
+MAP_CELADON_POKECENTER = 0x85
+MAP_CELADON_GYM = 0x86
+MAP_GAME_CORNER = 0x87
+MAP_CELADON_MART_5F = 0x88
+MAP_GAME_CORNER_PRIZE_ROOM = 0x89
+MAP_CELADON_DINER = 0x8A
+MAP_CELADON_CHIEF_HOUSE = 0x8B
+MAP_CELADON_HOTEL = 0x8C
+MAP_LAVENDER_POKECENTER = 0x8D
+MAP_POKEMON_TOWER_1F = 0x8E
+MAP_POKEMON_TOWER_2F = 0x8F
+MAP_POKEMON_TOWER_3F = 0x90
+MAP_POKEMON_TOWER_4F = 0x91
+MAP_POKEMON_TOWER_5F = 0x92
+MAP_POKEMON_TOWER_6F = 0x93
+MAP_POKEMON_TOWER_7F = 0x94
+MAP_MR_FUJIS_HOUSE = 0x95
+MAP_LAVENDER_MART = 0x96
+MAP_LAVENDER_CUBONE_HOUSE = 0x97
+MAP_FUCHSIA_MART = 0x98
+MAP_FUCHSIA_BILLS_GRANDPAS_HOUSE = 0x99
+MAP_FUCHSIA_POKECENTER = 0x9A
+MAP_WARDENS_HOUSE = 0x9B
+MAP_SAFARI_ZONE_GATE = 0x9C
+MAP_FUCHSIA_GYM = 0x9D
+MAP_FUCHSIA_MEETING_ROOM = 0x9E
+MAP_SEAFOAM_ISLANDS_B1F = 0x9F
+MAP_SEAFOAM_ISLANDS_B2F = 0xA0
+MAP_SEAFOAM_ISLANDS_B3F = 0xA1
+MAP_SEAFOAM_ISLANDS_B4F = 0xA2
+MAP_VERMILION_OLD_ROD_HOUSE = 0xA3
+MAP_FUCHSIA_GOOD_ROD_HOUSE = 0xA4
+MAP_POKEMON_MANSION_1F = 0xA5
+MAP_CINNABAR_GYM = 0xA6
+MAP_CINNABAR_LAB = 0xA7
+MAP_CINNABAR_LAB_TRADE_ROOM = 0xA8
+MAP_CINNABAR_LAB_METRONOME_ROOM = 0xA9
+MAP_CINNABAR_LAB_FOSSIL_ROOM = 0xAA
+MAP_CINNABAR_POKECENTER = 0xAB
+MAP_CINNABAR_MART = 0xAC
+MAP_CINNABAR_MART_COPY = 0xAD
+MAP_INDIGO_PLATEAU_LOBBY = 0xAE
+MAP_COPYCATS_HOUSE_1F = 0xAF
+MAP_COPYCATS_HOUSE_2F = 0xB0
+MAP_FIGHTING_DOJO = 0xB1
+MAP_SAFFRON_GYM = 0xB2
+MAP_SAFFRON_PIDGEY_HOUSE = 0xB3
+MAP_SAFFRON_MART = 0xB4
+MAP_SILPH_CO_1F = 0xB5
+MAP_SAFFRON_POKECENTER = 0xB6
+MAP_MR_PSYCHICS_HOUSE = 0xB7
+MAP_ROUTE_15_GATE_1F = 0xB8
+MAP_ROUTE_15_GATE_2F = 0xB9
+MAP_ROUTE_16_GATE_1F = 0xBA
+MAP_ROUTE_16_GATE_2F = 0xBB
+MAP_ROUTE_16_FLY_HOUSE = 0xBC
+MAP_ROUTE_12_SUPER_ROD_HOUSE = 0xBD
+MAP_ROUTE_18_GATE_1F = 0xBE
+MAP_ROUTE_18_GATE_2F = 0xBF
+MAP_SEAFOAM_ISLANDS_1F = 0xC0
+MAP_ROUTE_22_GATE = 0xC1
+MAP_VICTORY_ROAD_2F = 0xC2
+MAP_ROUTE_12_GATE_2F = 0xC3
+MAP_VERMILION_TRADE_HOUSE = 0xC4
+MAP_DIGLETTS_CAVE = 0xC5
+MAP_VICTORY_ROAD_3F = 0xC6
+MAP_ROCKET_HIDEOUT_B1F = 0xC7
+MAP_ROCKET_HIDEOUT_B2F = 0xC8
+MAP_ROCKET_HIDEOUT_B3F = 0xC9
+MAP_ROCKET_HIDEOUT_B4F = 0xCA
+MAP_ROCKET_HIDEOUT_ELEVATOR = 0xCB
+MAP_UNUSED_MAP_CC = 0xCC
+MAP_UNUSED_MAP_CD = 0xCD
+MAP_UNUSED_MAP_CE = 0xCE
+MAP_SILPH_CO_2F = 0xCF
+MAP_SILPH_CO_3F = 0xD0
+MAP_SILPH_CO_4F = 0xD1
+MAP_SILPH_CO_5F = 0xD2
+MAP_SILPH_CO_6F = 0xD3
+MAP_SILPH_CO_7F = 0xD4
+MAP_SILPH_CO_8F = 0xD5
+MAP_POKEMON_MANSION_2F = 0xD6
+MAP_POKEMON_MANSION_3F = 0xD7
+MAP_POKEMON_MANSION_B1F = 0xD8
+MAP_SAFARI_ZONE_EAST = 0xD9
+MAP_SAFARI_ZONE_NORTH = 0xDA
+MAP_SAFARI_ZONE_WEST = 0xDB
+MAP_SAFARI_ZONE_CENTER = 0xDC
+MAP_SAFARI_ZONE_CENTER_REST_HOUSE = 0xDD
+MAP_SAFARI_ZONE_SECRET_HOUSE = 0xDE
+MAP_SAFARI_ZONE_WEST_REST_HOUSE = 0xDF
+MAP_SAFARI_ZONE_EAST_REST_HOUSE = 0xE0
+MAP_SAFARI_ZONE_NORTH_REST_HOUSE = 0xE1
+MAP_CERULEAN_CAVE_2F = 0xE2
+MAP_CERULEAN_CAVE_B1F = 0xE3
+MAP_CERULEAN_CAVE_1F = 0xE4
+MAP_NAME_RATERS_HOUSE = 0xE5
+MAP_CERULEAN_BADGE_HOUSE = 0xE6
+MAP_UNUSED_MAP_E7 = 0xE7
+MAP_ROCK_TUNNEL_B1F = 0xE8
+MAP_SILPH_CO_9F = 0xE9
+MAP_SILPH_CO_10F = 0xEA
+MAP_SILPH_CO_11F = 0xEB
+MAP_SILPH_CO_ELEVATOR = 0xEC
+MAP_UNUSED_MAP_ED = 0xED
+MAP_UNUSED_MAP_EE = 0xEE
+MAP_TRADE_CENTER = 0xEF
+MAP_COLOSSEUM = 0xF0
+MAP_UNUSED_MAP_F1 = 0xF1
+MAP_UNUSED_MAP_F2 = 0xF2
+MAP_UNUSED_MAP_F3 = 0xF3
+MAP_UNUSED_MAP_F4 = 0xF4
+MAP_LORELEIS_ROOM = 0xF5
+MAP_BRUNOS_ROOM = 0xF6
+MAP_AGATHAS_ROOM = 0xF7
+
+MAP_NAMES = [
+'PALLET TOWN',
+'VIRIDIAN CITY',
+'PEWTER CITY',
+'CERULEAN CITY',
+'LAVENDER TOWN',
+'VERMILION CITY',
+'CELADON CITY',
+'FUCHSIA CITY',
+'CINNABAR ISLAND',
+'INDIGO PLATEAU',
+'SAFFRON CITY',
+'UNUSED MAP 0B',
+'ROUTE 1',
+'ROUTE 2',
+'ROUTE 3',
+'ROUTE 4',
+'ROUTE 5',
+'ROUTE 6',
+'ROUTE 7',
+'ROUTE 8',
+'ROUTE 9',
+'ROUTE 10',
+'ROUTE 11',
+'ROUTE 12',
+'ROUTE 13',
+'ROUTE 14',
+'ROUTE 15',
+'ROUTE 16',
+'ROUTE 17',
+'ROUTE 18',
+'ROUTE 19',
+'ROUTE 20',
+'ROUTE 21',
+'ROUTE 22',
+'ROUTE 23',
+'ROUTE 24',
+'ROUTE 25',
+'RED\'S HOUSE 1F',
+'RED\'S HOUSE 2F',
+'BLUE\'S HOUSE',
+'OAK\'S LAB',
+'VIRIDIAN POKECENTER',
+'VIRIDIAN MART',
+'VIRIDIAN SCHOOL HOUSE',
+'VIRIDIAN NICKNAME HOUSE',
+'VIRIDIAN GYM',
+'DIGLETTS CAVE ROUTE 2',
+'VIRIDIAN FOREST NORTH GATE',
+'ROUTE 2 TRADE HOUSE',
+'ROUTE 2 GATE',
+'VIRIDIAN FOREST SOUTH GATE',
+'VIRIDIAN FOREST',
+'MUSEUM 1F',
+'MUSEUM 2F',
+'PEWTER GYM',
+'PEWTER NIDORAN HOUSE',
+'PEWTER MART',
+'PEWTER SPEECH HOUSE',
+'PEWTER POKECENTER',
+'MT MOON 1F',
+'MT MOON B1F',
+'MT MOON B2F',
+'CERULEAN TRASHED HOUSE',
+'CERULEAN TRADE HOUSE',
+'CERULEAN POKECENTER',
+'CERULEAN GYM',
+'BIKE SHOP',
+'CERULEAN MART',
+'MT MOON POKECENTER',
+'CERULEAN TRASHED HOUSE COPY',
+'ROUTE 5 GATE',
+'UNDERGROUND PATH ROUTE 5',
+'DAYCARE',
+'ROUTE 6 GATE',
+'UNDERGROUND PATH ROUTE 6',
+'UNDERGROUND PATH ROUTE 6 COPY',
+'ROUTE 7 GATE',
+'UNDERGROUND PATH ROUTE 7',
+'UNDERGROUND PATH ROUTE 7 COPY',
+'ROUTE 8 GATE',
+'UNDERGROUND PATH ROUTE 8',
+'ROCK TUNNEL POKECENTER',
+'ROCK TUNNEL 1F',
+'POWER PLANT',
+'ROUTE 11 GATE 1F',
+'DIGLETT\'S CAVE ROUTE 11',
+'ROUTE 11 GATE 2F',
+'ROUTE 12 GATE 1F',
+'BILLS HOUSE',
+'VERMILION POKECENTER',
+'POKEMON FAN CLUB',
+'VERMILION MART',
+'VERMILION GYM',
+'VERMILION PIDGEY HOUSE',
+'VERMILION DOCK',
+'SS ANNE 1F',
+'SS ANNE 2F',
+'SS ANNE 3F',
+'SS ANNE B1F',
+'SS ANNE BOW',
+'SS ANNE KITCHEN',
+'SS ANNE CAPTAIN\'S ROOM',
+'SS ANNE 1F ROOMS',
+'SS ANNE 2F ROOMS',
+'SS ANNE B1F ROOMS',
+'UNUSED MAP 69',
+'UNUSED MAP 6A',
+'UNUSED MAP 6B',
+'VICTORY ROAD 1F',
+'UNUSED MAP 6D',
+'UNUSED MAP 6E',
+'UNUSED MAP 6F',
+'UNUSED MAP 70',
+'LANCES ROOM',
+'UNUSED MAP 72',
+'UNUSED MAP 73',
+'UNUSED MAP 74',
+'UNUSED MAP 75',
+'HALL OF FAME',
+'UNDERGROUND PATH NORTH SOUTH',
+'CHAMPION\'S ROOM',
+'UNDERGROUND PATH WEST EAST',
+'CELADON MART 1F',
+'CELADON MART 2F',
+'CELADON MART 3F',
+'CELADON MART 4F',
+'CELADON MART ROOF',
+'CELADON MART ELEVATOR',
+'CELADON MANSION 1F',
+'CELADON MANSION 2F',
+'CELADON MANSION 3F',
+'CELADON MANSION ROOF',
+'CELADON MANSION ROOF HOUSE',
+'CELADON POKECENTER',
+'CELADON GYM',
+'GAME CORNER',
+'CELADON MART 5F',
+'GAME CORNER PRIZE ROOM',
+'CELADON DINER',
+'CELADON CHIEF HOUSE',
+'CELADON HOTEL',
+'LAVENDER POKECENTER',
+'POKEMON TOWER 1F',
+'POKEMON TOWER 2F',
+'POKEMON TOWER 3F',
+'POKEMON TOWER 4F',
+'POKEMON TOWER 5F',
+'POKEMON TOWER 6F',
+'POKEMON TOWER 7F',
+'MR FUJIS HOUSE',
+'LAVENDER MART',
+'LAVENDER CUBONE HOUSE',
+'FUCHSIA MART',
+'FUCHSIA BILL\'S GRANDPAS HOUSE',
+'FUCHSIA POKECENTER',
+'WARDENS HOUSE',
+'SAFARI ZONE GATE',
+'FUCHSIA GYM',
+'FUCHSIA MEETING ROOM',
+'SEAFOAM ISLANDS B1F',
+'SEAFOAM ISLANDS B2F',
+'SEAFOAM ISLANDS B3F',
+'SEAFOAM ISLANDS B4F',
+'VERMILION OLD ROD HOUSE',
+'FUCHSIA GOOD ROD HOUSE',
+'POKEMON MANSION 1F',
+'CINNABAR GYM',
+'CINNABAR LAB',
+'CINNABAR LAB TRADE ROOM',
+'CINNABAR LAB METRONOME ROOM',
+'CINNABAR LAB FOSSIL ROOM',
+'CINNABAR POKECENTER',
+'CINNABAR MART',
+'CINNABAR MART COPY',
+'INDIGO PLATEAU LOBBY',
+'COPYCATS HOUSE 1F',
+'COPYCATS HOUSE 2F',
+'FIGHTING DOJO',
+'SAFFRON GYM',
+'SAFFRON PIDGEY HOUSE',
+'SAFFRON MART',
+'SILPH CO 1F',
+'SAFFRON POKECENTER',
+'MR PSYCHICS HOUSE',
+'ROUTE 15 GATE 1F',
+'ROUTE 15 GATE 2F',
+'ROUTE 16 GATE 1F',
+'ROUTE 16 GATE 2F',
+'ROUTE 16 FLY HOUSE',
+'ROUTE 12 SUPER ROD HOUSE',
+'ROUTE 18 GATE 1F',
+'ROUTE 18 GATE 2F',
+'SEAFOAM ISLANDS 1F',
+'ROUTE 22 GATE',
+'VICTORY ROAD 2F',
+'ROUTE 12 GATE 2F',
+'VERMILION TRADE HOUSE',
+'DIGLETTS CAVE',
+'VICTORY ROAD 3F',
+'ROCKET HIDEOUT B1F',
+'ROCKET HIDEOUT B2F',
+'ROCKET HIDEOUT B3F',
+'ROCKET HIDEOUT B4F',
+'ROCKET HIDEOUT ELEVATOR',
+'UNUSED MAP CC',
+'UNUSED MAP CD',
+'UNUSED MAP CE',
+'SILPH CO 2F',
+'SILPH CO 3F',
+'SILPH CO 4F',
+'SILPH CO 5F',
+'SILPH CO 6F',
+'SILPH CO 7F',
+'SILPH CO 8F',
+'POKEMON MANSION 2F',
+'POKEMON MANSION 3F',
+'POKEMON MANSION B1F',
+'SAFARI ZONE EAST',
+'SAFARI ZONE NORTH',
+'SAFARI ZONE WEST',
+'SAFARI ZONE CENTER',
+'SAFARI ZONE CENTER REST HOUSE',
+'SAFARI ZONE SECRET HOUSE',
+'SAFARI ZONE WEST REST HOUSE',
+'SAFARI ZONE EAST REST HOUSE',
+'SAFARI ZONE NORTH REST HOUSE',
+'CERULEAN CAVE 2F',
+'CERULEAN CAVE B1F',
+'CERULEAN CAVE 1F',
+'NAME RATER\'S HOUSE',
+'CERULEAN BADGE HOUSE',
+'UNUSED MAP E7',
+'ROCK TUNNEL B1F',
+'SILPH CO 9F',
+'SILPH CO 10F',
+'SILPH CO 11F',
+'SILPH CO ELEVATOR',
+'UNUSED MAP ED',
+'UNUSED MAP EE',
+'TRADE CENTER',
+'COLOSSEUM',
+'UNUSED MAP F1',
+'UNUSED MAP F2',
+'UNUSED MAP F3',
+'UNUSED MAP F4',
+'LORELEI\'S ROOM',
+'BRUNO\'S ROOM',
+'AGATHA\'S ROOM',
+]
+
+STATUS_ASLEEP = 4
+STATUS_POISONED = 8
+STATUS_BURNED = 16
+STATUS_FROZEN = 32
+STATUS_PARALYZED = 64
+
 MONSTER_NAMES = (
-  "Bulbasaur",
-  "Ivysaur",
-  "Venusaur",
-  "Charmander",
-  "Charmeleon",
-  "Charizard",
-  "Squirtle",
-  "Wartortle",
-  "Blastoise",
-  "Caterpie",
-  "Metapod",
-  "Butterfree",
-  "Weedle",
-  "Kakuna",
-  "Beedrill",
-  "Pidgey",
-  "Pidgeotto",
-  "Pidgeot",
-  "Rattata",
-  "Raticate",
-  "Spearow",
-  "Fearow",
-  "Ekans",
-  "Arbok",
-  "Pikachu",
-  "Raichu",
-  "Sandshrew",
-  "Sandslash",
-  "Nidoran♀",
-  "Nidorina",
-  "Nidoqueen",
-  "Nidoran♂",
-  "Nidorino",
-  "Nidoking",
-  "Clefairy",
-  "Clefable",
-  "Vulpix",
-  "Ninetales",
-  "Jigglypuff",
-  "Wigglytuff",
-  "Zubat",
-  "Golbat",
-  "Oddish",
-  "Gloom",
-  "Vileplume",
-  "Paras",
-  "Parasect",
-  "Venonat",
-  "Venomoth",
-  "Diglett",
-  "Dugtrio",
-  "Meowth",
-  "Persian",
-  "Psyduck",
-  "Golduck",
-  "Mankey",
-  "Primeape",
-  "Growlithe",
-  "Arcanine",
-  "Poliwag",
-  "Poliwhirl",
-  "Poliwrath",
-  "Abra",
-  "Kadabra",
-  "Alakazam",
-  "Machop",
-  "Machoke",
-  "Machamp",
-  "Bellsprout",
-  "Weepinbell",
-  "Victreebel",
-  "Tentacool",
-  "Tentacruel",
-  "Geodude",
-  "Graveler",
-  "Golem",
-  "Ponyta",
-  "Rapidash",
-  "Slowpoke",
-  "Slowbro",
-  "Magnemite",
-  "Magneton",
-  "Farfetch’d",
-  "Doduo",
-  "Dodrio",
-  "Seel",
-  "Dewgong",
-  "Grimer",
-  "Muk",
-  "Shellder",
-  "Cloyster",
-  "Gastly",
-  "Haunter",
-  "Gengar",
-  "Onix",
-  "Drowzee",
-  "Hypno",
-  "Krabby",
-  "Kingler",
-  "Voltorb",
-  "Electrode",
-  "Exeggcute",
-  "Exeggutor",
-  "Cubone",
-  "Marowak",
-  "Hitmonlee",
-  "Hitmonchan",
-  "Lickitung",
-  "Koffing",
-  "Weezing",
-  "Rhyhorn",
-  "Rhydon",
-  "Chansey",
-  "Tangela",
-  "Kangaskhan",
-  "Horsea",
-  "Seadra",
-  "Goldeen",
-  "Seaking",
-  "Staryu",
-  "Starmie",
-  "Mr. Mime",
-  "Scyther",
-  "Jynx",
-  "Electabuzz",
-  "Magmar",
-  "Pinsir",
-  "Tauros",
-  "Magikarp",
-  "Gyarados",
-  "Lapras",
-  "Ditto",
-  "Eevee",
-  "Vaporeon",
-  "Jolteon",
-  "Flareon",
-  "Porygon",
-  "Omanyte",
-  "Omastar",
-  "Kabuto",
-  "Kabutops",
-  "Aerodactyl",
-  "Snorlax",
-  "Articuno",
-  "Zapdos",
-  "Moltres",
-  "Dratini",
-  "Dragonair",
-  "Dragonite",
-  "Mewtwo",
-  "Mew",
+    "Bulbasaur",
+    "Ivysaur",
+    "Venusaur",
+    "Charmander",
+    "Charmeleon",
+    "Charizard",
+    "Squirtle",
+    "Wartortle",
+    "Blastoise",
+    "Caterpie",
+    "Metapod",
+    "Butterfree",
+    "Weedle",
+    "Kakuna",
+    "Beedrill",
+    "Pidgey",
+    "Pidgeotto",
+    "Pidgeot",
+    "Rattata",
+    "Raticate",
+    "Spearow",
+    "Fearow",
+    "Ekans",
+    "Arbok",
+    "Pikachu",
+    "Raichu",
+    "Sandshrew",
+    "Sandslash",
+    "Nidoran♀",
+    "Nidorina",
+    "Nidoqueen",
+    "Nidoran♂",
+    "Nidorino",
+    "Nidoking",
+    "Clefairy",
+    "Clefable",
+    "Vulpix",
+    "Ninetales",
+    "Jigglypuff",
+    "Wigglytuff",
+    "Zubat",
+    "Golbat",
+    "Oddish",
+    "Gloom",
+    "Vileplume",
+    "Paras",
+    "Parasect",
+    "Venonat",
+    "Venomoth",
+    "Diglett",
+    "Dugtrio",
+    "Meowth",
+    "Persian",
+    "Psyduck",
+    "Golduck",
+    "Mankey",
+    "Primeape",
+    "Growlithe",
+    "Arcanine",
+    "Poliwag",
+    "Poliwhirl",
+    "Poliwrath",
+    "Abra",
+    "Kadabra",
+    "Alakazam",
+    "Machop",
+    "Machoke",
+    "Machamp",
+    "Bellsprout",
+    "Weepinbell",
+    "Victreebel",
+    "Tentacool",
+    "Tentacruel",
+    "Geodude",
+    "Graveler",
+    "Golem",
+    "Ponyta",
+    "Rapidash",
+    "Slowpoke",
+    "Slowbro",
+    "Magnemite",
+    "Magneton",
+    "Farfetch’d",
+    "Doduo",
+    "Dodrio",
+    "Seel",
+    "Dewgong",
+    "Grimer",
+    "Muk",
+    "Shellder",
+    "Cloyster",
+    "Gastly",
+    "Haunter",
+    "Gengar",
+    "Onix",
+    "Drowzee",
+    "Hypno",
+    "Krabby",
+    "Kingler",
+    "Voltorb",
+    "Electrode",
+    "Exeggcute",
+    "Exeggutor",
+    "Cubone",
+    "Marowak",
+    "Hitmonlee",
+    "Hitmonchan",
+    "Lickitung",
+    "Koffing",
+    "Weezing",
+    "Rhyhorn",
+    "Rhydon",
+    "Chansey",
+    "Tangela",
+    "Kangaskhan",
+    "Horsea",
+    "Seadra",
+    "Goldeen",
+    "Seaking",
+    "Staryu",
+    "Starmie",
+    "Mr. Mime",
+    "Scyther",
+    "Jynx",
+    "Electabuzz",
+    "Magmar",
+    "Pinsir",
+    "Tauros",
+    "Magikarp",
+    "Gyarados",
+    "Lapras",
+    "Ditto",
+    "Eevee",
+    "Vaporeon",
+    "Jolteon",
+    "Flareon",
+    "Porygon",
+    "Omanyte",
+    "Omastar",
+    "Kabuto",
+    "Kabutops",
+    "Aerodactyl",
+    "Snorlax",
+    "Articuno",
+    "Zapdos",
+    "Moltres",
+    "Dratini",
+    "Dragonair",
+    "Dragonite",
+    "Mewtwo",
+    "Mew",
 )
 
 POKEDEX_TO_INDEX_MAP = (
-  (112, 0x01),
-  (115, 0x02),
-  (32, 0x03),
-  (35, 0x04),
-  (21, 0x05),
-  (100, 0x06),
-  (34, 0x07),
-  (80, 0x08),
-  (2, 0x09),
-  (103, 0x0A),
-  (108, 0x0B),
-  (102, 0x0C),
-  (88, 0x0D),
-  (94, 0x0E),
-  (29, 0x0F),
-  (31, 0x10),
-  (104, 0x11),
-  (111, 0x12),
-  (131, 0x13),
-  (59, 0x14),
-  (151, 0x15),
-  (130, 0x16),
-  (90, 0x17),
-  (72, 0x18),
-  (92, 0x19),
-  (123, 0x1A),
-  (120, 0x1B),
-  (9, 0x1C),
-  (127, 0x1D),
-  (114, 0x1E),
-  (58, 0x21),
-  (95, 0x22),
-  (22, 0x23),
-  (16, 0x24),
-  (79, 0x25),
-  (64, 0x26),
-  (75, 0x27),
-  (113, 0x28),
-  (67, 0x29),
-  (122, 0x2A),
-  (106, 0x2B),
-  (107, 0x2C),
-  (24, 0x2D),
-  (47, 0x2E),
-  (54, 0x2F),
-  (96, 0x30),
-  (76, 0x31),
-  (126, 0x33),
-  (125, 0x35),
-  (82, 0x36),
-  (109, 0x37),
-  (56, 0x39),
-  (86, 0x3A),
-  (50, 0x3B),
-  (128, 0x3C),
-  (83, 0x40),
-  (48, 0x41),
-  (149, 0x42),
-  (84, 0x46),
-  (60, 0x47),
-  (124, 0x48),
-  (146, 0x49),
-  (144, 0x4A),
-  (145, 0x4B),
-  (132, 0x4C),
-  (52, 0x4D),
-  (98, 0x4E),
-  (37, 0x52),
-  (38, 0x53),
-  (25, 0x54),
-  (26, 0x55),
-  (147, 0x58),
-  (148, 0x59),
-  (140, 0x5A),
-  (141, 0x5B),
-  (116, 0x5C),
-  (117, 0x5D),
-  (27, 0x60),
-  (28, 0x61),
-  (138, 0x62),
-  (139, 0x63),
-  (39, 0x64),
-  (40, 0x65),
-  (133, 0x66),
-  (136, 0x67),
-  (135, 0x68),
-  (134, 0x69),
-  (66, 0x6A),
-  (41, 0x6B),
-  (23, 0x6C),
-  (46, 0x6D),
-  (61, 0x6E),
-  (62, 0x6F),
-  (13, 0x70),
-  (14, 0x71),
-  (15, 0x72),
-  (85, 0x74),
-  (57, 0x75),
-  (51, 0x76),
-  (49, 0x77),
-  (87, 0x78),
-  (10, 0x7B),
-  (11, 0x7C),
-  (12, 0x7D),
-  (68, 0x7E),
-  (55, 0x80),
-  (97, 0x81),
-  (42, 0x82),
-  (150, 0x83),
-  (143, 0x84),
-  (129, 0x85),
-  (89, 0x88),
-  (99, 0x8A),
-  (91, 0x8B),
-  (101, 0x8D),
-  (36, 0x8E),
-  (110, 0x8F),
-  (53, 0x90),
-  (105, 0x91),
-  (93, 0x93),
-  (63, 0x94),
-  (65, 0x95),
-  (17, 0x96),
-  (18, 0x97),
-  (121, 0x98),
-  (1, 0x99),
-  (2, 0x9A),
-  (73, 0x9B),
-  (118, 0x9D),
-  (119, 0x9E),
-  (77, 0xA3),
-  (78, 0xA4),
-  (19, 0xA5),
-  (20, 0xA6),
-  (33, 0xA7),
-  (30, 0xA8),
-  (74, 0xA9),
-  (137, 0xAA),
-  (142, 0xAB),
-  (81, 0xAD),
-  (4, 0xB0),
-  (7, 0xB1),
-  (5, 0xB2),
-  (8, 0xB3),
-  (6, 0xB4),
-  (43, 0xB9),
-  (44, 0xBA),
-  (45, 0xBB),
-  (69, 0xBC),
-  (70, 0xBD),
-  (71, 0xBE),
+    (112, 0x01),
+    (115, 0x02),
+    (32, 0x03),
+    (35, 0x04),
+    (21, 0x05),
+    (100, 0x06),
+    (34, 0x07),
+    (80, 0x08),
+    (2, 0x09),
+    (103, 0x0A),
+    (108, 0x0B),
+    (102, 0x0C),
+    (88, 0x0D),
+    (94, 0x0E),
+    (29, 0x0F),
+    (31, 0x10),
+    (104, 0x11),
+    (111, 0x12),
+    (131, 0x13),
+    (59, 0x14),
+    (151, 0x15),
+    (130, 0x16),
+    (90, 0x17),
+    (72, 0x18),
+    (92, 0x19),
+    (123, 0x1A),
+    (120, 0x1B),
+    (9, 0x1C),
+    (127, 0x1D),
+    (114, 0x1E),
+    (58, 0x21),
+    (95, 0x22),
+    (22, 0x23),
+    (16, 0x24),
+    (79, 0x25),
+    (64, 0x26),
+    (75, 0x27),
+    (113, 0x28),
+    (67, 0x29),
+    (122, 0x2A),
+    (106, 0x2B),
+    (107, 0x2C),
+    (24, 0x2D),
+    (47, 0x2E),
+    (54, 0x2F),
+    (96, 0x30),
+    (76, 0x31),
+    (126, 0x33),
+    (125, 0x35),
+    (82, 0x36),
+    (109, 0x37),
+    (56, 0x39),
+    (86, 0x3A),
+    (50, 0x3B),
+    (128, 0x3C),
+    (83, 0x40),
+    (48, 0x41),
+    (149, 0x42),
+    (84, 0x46),
+    (60, 0x47),
+    (124, 0x48),
+    (146, 0x49),
+    (144, 0x4A),
+    (145, 0x4B),
+    (132, 0x4C),
+    (52, 0x4D),
+    (98, 0x4E),
+    (37, 0x52),
+    (38, 0x53),
+    (25, 0x54),
+    (26, 0x55),
+    (147, 0x58),
+    (148, 0x59),
+    (140, 0x5A),
+    (141, 0x5B),
+    (116, 0x5C),
+    (117, 0x5D),
+    (27, 0x60),
+    (28, 0x61),
+    (138, 0x62),
+    (139, 0x63),
+    (39, 0x64),
+    (40, 0x65),
+    (133, 0x66),
+    (136, 0x67),
+    (135, 0x68),
+    (134, 0x69),
+    (66, 0x6A),
+    (41, 0x6B),
+    (23, 0x6C),
+    (46, 0x6D),
+    (61, 0x6E),
+    (62, 0x6F),
+    (13, 0x70),
+    (14, 0x71),
+    (15, 0x72),
+    (85, 0x74),
+    (57, 0x75),
+    (51, 0x76),
+    (49, 0x77),
+    (87, 0x78),
+    (10, 0x7B),
+    (11, 0x7C),
+    (12, 0x7D),
+    (68, 0x7E),
+    (55, 0x80),
+    (97, 0x81),
+    (42, 0x82),
+    (150, 0x83),
+    (143, 0x84),
+    (129, 0x85),
+    (89, 0x88),
+    (99, 0x8A),
+    (91, 0x8B),
+    (101, 0x8D),
+    (36, 0x8E),
+    (110, 0x8F),
+    (53, 0x90),
+    (105, 0x91),
+    (93, 0x93),
+    (63, 0x94),
+    (65, 0x95),
+    (17, 0x96),
+    (18, 0x97),
+    (121, 0x98),
+    (1, 0x99),
+    (2, 0x9A),
+    (73, 0x9B),
+    (118, 0x9D),
+    (119, 0x9E),
+    (77, 0xA3),
+    (78, 0xA4),
+    (19, 0xA5),
+    (20, 0xA6),
+    (33, 0xA7),
+    (30, 0xA8),
+    (74, 0xA9),
+    (137, 0xAA),
+    (142, 0xAB),
+    (81, 0xAD),
+    (4, 0xB0),
+    (7, 0xB1),
+    (5, 0xB2),
+    (8, 0xB3),
+    (6, 0xB4),
+    (43, 0xB9),
+    (44, 0xBA),
+    (45, 0xBB),
+    (69, 0xBC),
+    (70, 0xBD),
+    (71, 0xBE),
 )
+
+# Modest list of banned words
+BANNED_WORDS = [
+    "cunt",
+    "faggot",
+    "fuckyou",
+    "hitier",
+    "hitler",
+    "holocaust"
+    "jew",
+    "killall",
+    "murder",
+    "nigg",
+    "nlgg"
+    "retard",
+    "tranny",
+]

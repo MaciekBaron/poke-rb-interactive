@@ -1,0 +1,36 @@
+<!-- Since this is just run locally, nothing needs to be production ready -->
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div class="text-box" id="app">
+      <div>{{ message }}</div>
+      <div class="question-container" v-bind:class="{ visible: timeLeft > 0 }">
+        <div class="question">{{ visibleQuestion }}</div>
+        <div v-for="(option, index) in options"
+            :key="option.index"
+            v-bind:class="{ winning: (index == 0 && timeLeft == 0) }"
+            class="option">
+          <div v-if="pollType == 'monster'">
+            ({{ option.votes }})
+            <img v-bind:src="'https://raw.githubusercontent.com/pret/pokered/master/pic/rgmon/' + option.label.toLowerCase().replace(' ', '') + '.png'">
+            {{ option.label }}
+          </div>
+          <span class="option-label" v-if="pollType != 'monster'">
+            ({{ option.votes }}) {{ option.label + (option.description ? ':' : '') }}
+          </span>
+          <span class="option-description">{{ option.description }}</span>
+        </div>
+        <div v-if="timeLeft > 0">
+          TIME LEFT TO VOTE: {{ Math.round(timeLeft) }}s
+        </div>
+        <div v-if="timeLeft > 0">
+          Vote by saying e.g. <span class="invert">!vote {{ suggestion }}</a>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

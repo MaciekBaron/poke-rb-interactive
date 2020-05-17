@@ -1,0 +1,77 @@
+@font-face {
+  font-family: monsterFont;
+  src: url(https://cdn.jsdelivr.net/npm/pokemon-font@1.8.1/fonts/pokemon-font.woff);
+}
+
+body {
+  font-family: monsterFont, monospace;
+}
+
+.question-container {
+  opacity: 0;
+  transition: opacity 1s 5s steps(3);
+}
+
+.question-container img {
+  vertical-align: middle;
+  height: 80px;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.option-description {
+  color: #666;
+}
+
+.question-container.visible {
+  opacity: 1;
+  transition: none;
+}
+
+.text-box {
+  border: 2px solid #000;
+  border-radius: 4px;
+  max-width: 500px;
+  padding: .75em;
+}
+
+.option {
+  position: relative;
+  padding-left: 1em;
+}
+
+.winning {
+  color: red;
+}
+
+.winning::before {
+  content: '\2192';
+  animation: blink 1s infinite steps(1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.option-label {
+  text-transform: uppercase;
+}
+
+.question {
+  margin-bottom: 1em;
+}
+
+.invert {
+  background-color: black;
+  color: white;
+  padding: 0 2px;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

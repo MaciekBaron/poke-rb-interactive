@@ -1,0 +1,16 @@
+[PORTS]
+HTTPPort = 8888
+WebSocketsPort = 8765
+
+[ROM]
+FileName = pokered.gb
+
+[STATE]
+UpdateInterval = 1.0
+
+[TWITCH]
+IRCToken = oauth:KEY_HERE
+ClientId = CLIENT_ID
+Nick = BOT_NAME
+Prefix = !
+Channel = YOUR_CHANNEL

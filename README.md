@@ -1,5 +1,6 @@
 Interactive Twitch Pokémon Red/Blue
 ===================================
+![Screenshot showing app in action](screenshot.png)
 This is a Python application that allows you to play 1st generation Pokémon
 games while your Twitch viewers influence the game by voting. Viewers can help
 or hinder the player's progress.

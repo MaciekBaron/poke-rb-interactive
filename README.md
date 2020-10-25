@@ -1,4 +1,4 @@
-Interactive Twitch Pokémon Red/Blue
+Interactive Twitch Pokémon Red/Blue (Chat vs Pokémon Red)
 ===================================
 ![Screenshot showing app in action](screenshot.png)
 This is a Python application that allows you to play 1st generation Pokémon
